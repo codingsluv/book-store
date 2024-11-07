@@ -20,4 +20,5 @@ func BookRoutes(app *fiber.App) {
 	booksGroup.Get("/:id", handler.HandlerGetBooksById)
 	booksGroup.Get("/", handler.HandlerGetAllBooks)
 	booksGroup.Put("/:id", handler.HandlerUpdateBooks)
+	booksGroup.Delete("/:id", handler.HandlerDeleteBooks)
 }
