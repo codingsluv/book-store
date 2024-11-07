@@ -8,6 +8,8 @@ type Repository interface {
 	CreateBooks(books *Book) error
 	GetBooksById(id int) (*Book, error)
 	GetAllBooks() ([]Book, error)
+	UpdateBooks(books *Book) error
+	DeleteBooks(id int) error
 }
 
 type repository struct {
@@ -36,4 +38,12 @@ func (r *repository) GetAllBooks() ([]Book, error) {
 		return nil, err
 	}
 	return books, nil
+}
+
+func (r *repository) UpdateBooks(books *Book) error {
+	return r.db.Save(books).Error
+}
+
+func (r *repository) DeleteBooks(id int) error {
+	return r.db.Delete(&Book{}, id).Error
 }
