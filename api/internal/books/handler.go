@@ -55,3 +55,13 @@ func (h *Handler) HandlerGetBooksById(c *fiber.Ctx) error {
 		"data":    book,
 	})
 }
+
+func (h *Handler) HandlerGetAllBooks(c *fiber.Ctx) error {
+	books, err := h.Service.ServiceGetAllBooks()
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+	return c.Status(fiber.StatusOK).JSON(books)
+}

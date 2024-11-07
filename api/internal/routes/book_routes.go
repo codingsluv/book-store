@@ -18,4 +18,5 @@ func BookRoutes(app *fiber.App) {
 
 	booksGroup.Post("/", handler.HandlerCreateBooks)
 	booksGroup.Get("/:id", handler.HandlerGetBooksById)
+	booksGroup.Get("/", handler.HandlerGetAllBooks)
 }
