@@ -2,6 +2,7 @@ package books
 
 import (
 	"net/http"
+	"strconv"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -32,4 +33,25 @@ func (h *Handler) HandlerCreateBooks(c *fiber.Ctx) error {
 			"data":    book,
 		},
 	)
+}
+
+func (h *Handler) HandlerGetBooksById(c *fiber.Ctx) error {
+	id, err := strconv.Atoi(c.Params("id"))
+	if err != nil || id <= 0 {
+		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
+			"error": "Invalid book ID",
+		})
+	}
+
+	book, err := h.Service.ServiceGetBooksById(id)
+	if err != nil {
+		return c.Status(http.StatusNotFound).JSON(fiber.Map{
+			"error": "Book not found",
+		})
+	}
+
+	return c.JSON(fiber.Map{
+		"success": "book retrieved successfully",
+		"data":    book,
+	})
 }

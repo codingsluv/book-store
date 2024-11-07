@@ -2,6 +2,7 @@ package books
 
 type BookService interface {
 	ServiceCreateBooks(input InputBook) (*Book, error)
+	ServiceGetBooksById(id int) (*Book, error)
 }
 
 type bookService struct {
@@ -24,4 +25,8 @@ func (s *bookService) ServiceCreateBooks(input InputBook) (*Book, error) {
 		return nil, err
 	}
 	return book, nil
+}
+
+func (s *bookService) ServiceGetBooksById(id int) (*Book, error) {
+	return s.repository.GetBooks(id)
 }
