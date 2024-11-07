@@ -1,141 +1,141 @@
-// src/components/BookList.vue
-
 <template>
   <div class="book-list-container">
-    <h1 class="title">Books List</h1>
+    <h1 class="title">Book List</h1>
     <ul class="book-list">
-      <li v-for="book in books" :key="book.id" class="book-item">
-        <h2 class="book-title">{{ book.title }}</h2>
-        <p><strong>Author:</strong> {{ book.author }}</p>
-        <p><strong>Published:</strong> {{ book.publishedData }}</p>
-        <p><strong>ISBN:</strong> {{ book.isbn }}</p>
-        <p><strong>Price:</strong> ${{ book.price }}</p>
+      <li v-for="book in books" :key="book.id" @click="showBookDetails(book)">
+        <div class="book-item">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </div>
       </li>
     </ul>
+
+    <!-- Show book details modal -->
+    <div v-if="selectedBook" class="book-details-modal">
+      <div class="modal-content">
+        <h2>{{ selectedBook.title }}</h2>
+        <p><strong>Author:</strong> {{ selectedBook.author }}</p>
+        <p><strong>Published Date:</strong> {{ selectedBook.publishedData }}</p>
+        <p><strong>ISBN:</strong> {{ selectedBook.isbn }}</p>
+        <p><strong>Price:</strong> {{ selectedBook.price }}</p>
+
+        <!-- Edit Button -->
+        <button @click="editBook">Edit</button>
+        <button @click="deleteBook">Delete</button>
+        <button @click="closeModal">Close</button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   data() {
     return {
-      books: [],
+      books: [],  // Daftar buku
+      selectedBook: null, // Buku yang sedang dipilih untuk melihat detail
     };
   },
-  mounted() {
-    this.fetchBooks();
-  },
   methods: {
-    async fetchBooks() {
-      try {
-        const response = await axios.get('http://localhost:3000/api/v1/books');
-        this.books = response.data;
-      } catch (error) {
-        console.error('Error fetching books:', error);
-      }
+    fetchBooks() {
+      // Ambil data buku dari API
+      fetch("http://localhost:3000/api/v1/books")
+        .then((response) => response.json())
+        .then((data) => {
+          this.books = data;  // Set daftar buku ke data yang diterima dari API
+        });
     },
+
+    showBookDetails(book) {
+      // Menampilkan detail buku ketika salah satu judul diklik
+      this.selectedBook = book;
+    },
+
+    closeModal() {
+      // Menutup modal detail buku
+      this.selectedBook = null;
+    },
+
+    editBook() {
+      // Mengarahkan ke halaman edit buku dengan ID buku yang dipilih
+      this.$router.push(`/edit/${this.selectedBook.id}`);
+    },
+
+    deleteBook() {
+      // Hapus buku dari API
+      fetch(`http://localhost:3000/api/v1/books/${this.selectedBook.id}`, {
+        method: "DELETE",
+      })
+        .then(() => {
+          this.books = this.books.filter(
+            (book) => book.id !== this.selectedBook.id
+          );  // Hapus buku dari daftar yang ada
+          this.closeModal();  // Tutup modal setelah penghapusan
+        })
+        .catch((error) => console.error("Error deleting book:", error));
+    },
+  },
+  mounted() {
+    this.fetchBooks();  // Ambil daftar buku saat komponen pertama kali dimuat
   },
 };
 </script>
 
 <style scoped>
-/* src/assets/css/BookList.css */
-
-/* Style Umum */
-/* src/assets/css/BookList.css */
-
-/* Style Umum */
+/* Styling untuk daftar buku dan detail modal */
 .book-list-container {
   max-width: 900px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #f3f4f6;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 25px;
-  font-family: 'Roboto', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .book-list {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 .book-item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #6200ea;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .book-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #3700b3;
 }
 
-.book-title {
-  font-size: 1.6rem;
-  color: #4caf50;
-  font-weight: bold;
-  margin-bottom: 15px;
+.book-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.book-item p {
-  font-size: 1rem;
-  color: #555;
-  margin: 5px 0;
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
 }
 
-.book-item p strong {
-  color: #333;
+button {
+  background-color: #6200ea;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .book-list-container {
-    padding: 20px;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .book-item {
-    padding: 15px;
-  }
-
-  .book-title {
-    font-size: 1.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .book-list-container {
-    padding: 15px;
-  }
-
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .book-item {
-    padding: 12px;
-  }
-
-  .book-title {
-    font-size: 1.2rem;
-  }
+button:hover {
+  background-color: #3700b3;
 }
 </style>

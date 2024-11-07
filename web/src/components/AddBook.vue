@@ -1,12 +1,10 @@
-// src/components/AddBook.vue
-
 <template>
   <div class="add-book-container">
     <h1 class="title">Add New Book</h1>
     <form @submit.prevent="addBook" class="form">
       <input v-model="book.title" type="text" placeholder="Title" required class="input"/>
       <input v-model="book.author" type="text" placeholder="Author" required class="input"/>
-      <input v-model="book.publishedData" type="text" placeholder="Published Date (YYYY-MM-DD)" required class="input"/>
+      <input v-model="book.publishedData" type="date" placeholder="Published Date (YYYY-MM-DD)" required class="input"/>
       <input v-model="book.isbn" type="text" placeholder="ISBN" required class="input"/>
       <input v-model="book.price" type="number" placeholder="Price" required class="input"/>
       <button type="submit" class="button">Add Book</button>
@@ -43,9 +41,6 @@ export default {
 </script>
 
 <style>
-/* src/assets/css/AddBook.css */
-
-/* Style Umum */
 .add-book-container {
   position: absolute;
   top: 20px;
@@ -81,13 +76,13 @@ export default {
 }
 
 .input:focus {
-  border-color: #4caf50;
+  border-color: #872c8c;
   outline: none;
 }
 
 .button {
   padding: 14px;
-  background-color: #4caf50;
+  background-color: #872c8c;
   color: white;
   border: none;
   border-radius: 6px;
@@ -98,7 +93,7 @@ export default {
 
 .button:hover {
   background-color: #45a049;
-  animation: bounce 0.5s ease;
+  animation: bounce 0.3s ease;
 }
 
 @keyframes bounce {
