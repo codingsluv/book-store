@@ -1,7 +1,7 @@
 package books
 
 type BookService interface {
-	CreateBooks(input InputBook) (*Book, error)
+	ServiceCreateBooks(input InputBook) (*Book, error)
 }
 
 type bookService struct {
@@ -12,7 +12,7 @@ func NewService(repository Repository) BookService {
 	return &bookService{repository}
 }
 
-func (s *bookService) CreateBooks(input InputBook) (*Book, error) {
+func (s *bookService) ServiceCreateBooks(input InputBook) (*Book, error) {
 	book := &Book{
 		Title:         input.Title,
 		Author:        input.Author,
@@ -23,5 +23,5 @@ func (s *bookService) CreateBooks(input InputBook) (*Book, error) {
 	if err := s.repository.CreateBooks(book); err != nil {
 		return nil, err
 	}
-	return book, s.repository.CreateBooks(book)
+	return book, nil
 }

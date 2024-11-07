@@ -16,5 +16,5 @@ func BookRoutes(app *fiber.App) {
 	api := app.Group("/api/v1")
 	booksGroup := api.Group("/books")
 
-	booksGroup.Post("/", handler.CreateBooks)
+	booksGroup.Post("/", handler.HandlerCreateBooks)
 }

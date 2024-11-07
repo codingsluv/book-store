@@ -14,7 +14,7 @@ func NewHandler(service BookService) *Handler {
 	return &Handler{Service: service}
 }
 
-func (h *Handler) CreateBooks(c *fiber.Ctx) error {
+func (h *Handler) HandlerCreateBooks(c *fiber.Ctx) error {
 	var input InputBook
 	if err := c.BodyParser(&input); err != nil {
 		return c.Status(http.StatusBadRequest).JSON(fiber.Map{
@@ -22,14 +22,14 @@ func (h *Handler) CreateBooks(c *fiber.Ctx) error {
 		})
 	}
 
-	book, err := h.Service.CreateBooks(input)
+	book, err := h.Service.ServiceCreateBooks(input)
 	if err != nil {
-		return c.Status(http.StatusCreated).JSON(
-			fiber.Map{
-				"success": "false",
-				"data":    book,
-			},
-		)
+		return err
 	}
-	return nil
+	return c.Status(http.StatusCreated).JSON(
+		fiber.Map{
+			"success": "book created successfully",
+			"data":    book,
+		},
+	)
 }
