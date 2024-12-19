@@ -1,0 +1,202 @@
+[
+    {
+        "_id": 1,
+        "title": "Rahasia Toko Online yang Sukses",
+        "description": "Temukan cara rahasia untuk mengembangkan toko onlinemu di tengah persaingan yang ketat.",
+        "category": "business",
+        "trending": true,
+        "coverImage": "book-1.png",
+        "oldPrice": "Rp449.900",
+        "newPrice": "Rp299.900"
+    },
+    {
+        "_id": 2,
+        "title": "10 Buku Fiksi Terbaik Tahun Ini",
+        "description": "Kumpulan rekomendasi buku fiksi terbaik yang sedang menjadi tren tahun ini.",
+        "category": "buku",
+        "trending": true,
+        "coverImage": "book-2.png",
+        "oldPrice": "Rp374.900",
+        "newPrice": "Rp224.900"
+    },
+    {
+        "_id": 3,
+        "title": "Misteri Dunia SEO 2024",
+        "description": "Panduan mendalam untuk menguasai strategi SEO dan menaklukkan mesin pencari.",
+        "category": "marketing",
+        "trending": true,
+        "coverImage": "book-3.png",
+        "oldPrice": "Rp599.900",
+        "newPrice": "Rp449.900"
+    },
+    {
+        "_id": 4,
+        "title": "Platform E-Commerce Terbaik",
+        "description": "Panduan lengkap untuk memilih platform e-commerce terbaik tahun ini.",
+        "category": "business",
+        "trending": false,
+        "coverImage": "book-4.png",
+        "oldPrice": "Rp749.900",
+        "newPrice": "Rp599.900"
+    },
+    {
+        "_id": 5,
+        "title": "Kisah Fiksi yang Wajib Dibaca",
+        "description": "Rekomendasi buku fiksi terbaik yang akan membuatmu terhanyut dalam cerita.",
+        "category": "buku",
+        "trending": true,
+        "coverImage": "book-5.png",
+        "oldPrice": "Rp299.900",
+        "newPrice": "Rp149.900"
+    },
+    {
+        "_id": 6,
+        "title": "Panduan Pemasaran Digital",
+        "description": "Strategi lengkap untuk memenangkan pasar digital di tahun 2024.",
+        "category": "marketing",
+        "trending": false,
+        "coverImage": "book-6.png",
+        "oldPrice": "Rp674.900",
+        "newPrice": "Rp524.900"
+    },
+    {
+        "_id": 7,
+        "title": "Hari Pertama Kehancuran",
+        "description": "Kisah menegangkan tentang perjuangan bertahan hidup di tengah dunia yang dipenuhi zombie.",
+        "category": "horror",
+        "trending": true,
+        "coverImage": "book-7.png",
+        "oldPrice": "Rp899.900",
+        "newPrice": "Rp749.900"
+    },
+    {
+        "_id": 8,
+        "title": "Pertarungan Hidup dan Mati",
+        "description": "Bisakah kamu bertahan hidup di dunia liar di mana semua orang ingin mengakhiri nyawamu?",
+        "category": "fiksi",
+        "trending": true,
+        "coverImage": "book-8.png",
+        "oldPrice": "Rp329.900",
+        "newPrice": "Rp254.900"
+    },
+    {
+        "_id": 9,
+        "title": "Harry Potter dan Orde Phoenix",
+        "description": "Harry Potter memulai tahun kelimanya di Hogwarts, di tengah misteri dan bahaya yang mengintai.",
+        "category": "adventure",
+        "trending": false,
+        "coverImage": "book-9.png",
+        "oldPrice": "Rp419.900",
+        "newPrice": "Rp284.900"
+    },
+    {
+        "_id": 10,
+        "title": "Pride dan Prejudice",
+        "description": "Clash romantis antara Elizabeth yang kritis dan Mr. Darcy yang angkuh akan membuatmu terpikat.",
+        "category": "fiksi",
+        "trending": true,
+        "coverImage": "book-10.png",
+        "oldPrice": "Rp224.900",
+        "newPrice": "Rp164.900"
+    },
+    {
+        "_id": 11,
+        "title": "Petualangan di Negeri Ajaib",
+        "description": "Ikuti Alice dalam perjalanan menakjubkan ke dunia yang penuh keajaiban dan misteri.",
+        "category": "adventure",
+        "trending": true,
+        "coverImage": "book-11.png",
+        "oldPrice": "Rp749.900",
+        "newPrice": "Rp599.900"
+    },
+    {
+        "_id": 12,
+        "title": "Mengejar Takdir",
+        "description": "Sebuah kisah tentang perjuangan seorang pemuda dalam mencari harta karun dan arti hidup.",
+        "category": "adventure",
+        "trending": true,
+        "coverImage": "book-12.png",
+        "oldPrice": "Rp539.900",
+        "newPrice": "Rp409.900"
+    },
+    {
+        "_id": 13,
+        "title": "Cinta dan Pengorbanan",
+        "description": "Kisah romantis yang penuh dengan perjuangan dan keputusan sulit yang harus dihadapi.",
+        "category": "romance",
+        "trending": true,
+        "coverImage": "book-13.png",
+        "oldPrice": "Rp219.900",
+        "newPrice": "Rp169.900"
+    },
+    {
+        "_id": 14,
+        "title": "Bayangan Dorian Gray",
+        "description": "Kisah menegangkan tentang seorang pemuda yang menjual jiwanya demi kecantikan abadi.",
+        "category": "horror",
+        "trending": true,
+        "coverImage": "book-14.png",
+        "oldPrice": "Rp399.900",
+        "newPrice": "Rp319.900"
+    },
+    {
+        "_id": 15,
+        "title": "Mimpi di Bawah Langit Malam",
+        "description": "Sebuah cerita magis yang membawa pembaca ke dunia mimpi yang penuh petualangan.",
+        "category": "fiksi",
+        "trending": false,
+        "coverImage": "book-15.png",
+        "oldPrice": "Rp299.900",
+        "newPrice": "Rp199.900"
+    },
+    {
+        "_id": 16,
+        "title": "Legenda Sang Pelindung",
+        "description": "Perjalanan epik seorang pahlawan dalam melindungi negerinya dari ancaman kegelapan.",
+        "category": "adventure",
+        "trending": true,
+        "coverImage": "book-16.png",
+        "oldPrice": "Rp469.900",
+        "newPrice": "Rp369.900"
+    },
+    {
+        "_id": 17,
+        "title": "Kebenaran Tersembunyi",
+        "description": "Detektif muda berusaha mengungkap misteri di balik kasus pembunuhan yang penuh teka-teki.",
+        "category": "mystery",
+        "trending": false,
+        "coverImage": "book-17.png",
+        "oldPrice": "Rp319.900",
+        "newPrice": "Rp239.900"
+    },
+    {
+        "_id": 18,
+        "title": "Pengembaraan di Dunia Paralel",
+        "description": "Kisah petualangan seru di dunia paralel yang penuh keajaiban dan bahaya.",
+        "category": "adventure",
+        "trending": true,
+        "coverImage": "book-18.png",
+        "oldPrice": "Rp599.900",
+        "newPrice": "Rp459.900"
+    },
+    {
+        "_id": 19,
+        "title": "Rahasia Waktu",
+        "description": "Perjalanan melintasi waktu untuk menyelamatkan dunia dari kehancuran.",
+        "category": "fiksi",
+        "trending": true,
+        "coverImage": "book-19.png",
+        "oldPrice": "Rp389.900",
+        "newPrice": "Rp289.900"
+    },
+    {
+        "_id": 20,
+        "title": "Penjaga Hutan Terlarang",
+        "description": "Kisah seorang penjaga yang melindungi hutan magis dari ancaman luar.",
+        "category": "fantasy",
+        "trending": true,
+        "coverImage": "book-20.png",
+        "oldPrice": "Rp499.900",
+        "newPrice": "Rp399.900"
+    }
+]
