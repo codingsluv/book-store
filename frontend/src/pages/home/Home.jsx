@@ -1,4 +1,6 @@
 import Banner from "./Banner";
+import News from "./News";
+import Recomended from "./Recomended";
 import TopSeller from "./TopSeller";
 
 export default function Home() {
@@ -6,6 +8,8 @@ export default function Home() {
         <>
             <Banner />
             <TopSeller />
+            <Recomended />
+            <News />
         </>
     )
 }
