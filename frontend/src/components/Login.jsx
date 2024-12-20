@@ -5,7 +5,7 @@ export default function Login() {
   return (
     <div className="h-[calc(100vh-100px)] flex items-center justify-center">
       <div className="w-full max-w-md px-4 py-8 bg-white rounded-md shadow-lg">
-        <h2 className="text-xl font-semibold mb-4">Login</h2>
+        <h2 className="text-xl font-semibold mb-4">Please Login...</h2>
         <form className="space-y-4">
           <div className="mb-4">
             <label
